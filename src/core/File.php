@@ -20,6 +20,10 @@ class File {
     }
   }
 
+  public function track() {
+    Config::$cache->update($this->filename);
+  }
+
   private function timeUpdateTrigger() {
     if (!file_exists($this->filename))
       throw new \Exception("$this->filename not found!");
