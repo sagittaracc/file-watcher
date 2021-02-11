@@ -1,8 +1,9 @@
 <?php
 
-use sagittaracc\Base\File;
+require_once('vendor/autoload.php');
+
+use sagittaracc\core\File;
 
 (new File('scratch.php'))->onChange('timeUpdate', function(){
   echo 'Start tracking...';
-  $this->watch();
 });

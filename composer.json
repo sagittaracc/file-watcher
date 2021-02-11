@@ -1,0 +1,19 @@
+{
+  "name": "sagittaracc/file-watcher",
+  "description": "File watcher",
+  "type": "lib",
+  "authors": [
+    {
+      "name": "sagittaracc",
+      "email": "sagittaracc@gmail.com"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/"
+    ]
+  },
+  "require": {
+    
+  }
+}
