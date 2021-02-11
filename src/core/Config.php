@@ -4,7 +4,7 @@ namespace sagittaracc\core;
 
 class Config {
   public static $cache = null;
-  private static $cacheHandler = '';
+  private static $cacheHandler = 'sagittaracc\core\DbCache';
 
   public static function init() {
     if (class_exists(self::$cacheHandler))
