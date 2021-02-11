@@ -34,6 +34,6 @@ class File {
     if (!Config::$cache->exists($this->filename))
       return true;
 
-    return filemtime($this->filename) <> Config::$cache->file($this->filename)->getLastModified();
+    return date('Y-m-d H:i:s', filemtime($this->filename)) <> Config::$cache->file($this->filename)->getLastModified();
   }
 }
