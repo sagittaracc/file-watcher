@@ -14,6 +14,6 @@
     ]
   },
   "require": {
-    "sagittaracc/db-file-cache": "@dev"
+    "sagittaracc/db-file-cache": "dev-main"
   }
 }
