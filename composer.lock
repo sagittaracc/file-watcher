@@ -545,12 +545,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sagittaracc/db-file-cache.git",
-                "reference": "b7ba0f533837d2f954426892479a47148c1eba98"
+                "reference": "899711153c6241821c4d1d29233d82ca37240070"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sagittaracc/db-file-cache/zipball/b7ba0f533837d2f954426892479a47148c1eba98",
-                "reference": "b7ba0f533837d2f954426892479a47148c1eba98",
+                "url": "https://api.github.com/repos/sagittaracc/db-file-cache/zipball/899711153c6241821c4d1d29233d82ca37240070",
+                "reference": "899711153c6241821c4d1d29233d82ca37240070",
                 "shasum": ""
             },
             "require": {
@@ -576,7 +576,7 @@
                 "issues": "https://github.com/sagittaracc/db-file-cache/issues",
                 "source": "https://github.com/sagittaracc/db-file-cache/tree/main"
             },
-            "time": "2021-02-11T13:54:34+00:00"
+            "time": "2021-02-11T14:56:10+00:00"
         },
         {
             "name": "symfony/config",

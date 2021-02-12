@@ -6,7 +6,8 @@ class File {
   private $filename = null;
 
   function __construct($filename) {
-    $this->filename = $filename;
+    if (file_exists($filename))
+      $this->filename = realpath($filename);
   }
 
   public function onChange($event, $callback) {
@@ -25,8 +26,8 @@ class File {
   }
 
   private function timeUpdateTrigger() {
-    if (!file_exists($this->filename))
-      throw new \Exception("$this->filename not found!");
+    if (!$this->filename)
+      throw new \Exception("File not found!");
 
     if (!Config::$cache)
       throw new \Exception('Cache not defined! Please define this in config!');
@@ -34,6 +35,6 @@ class File {
     if (!Config::$cache->exists($this->filename))
       return true;
 
-    return date('Y-m-d H:i:s', filemtime($this->filename)) <> Config::$cache->file($this->filename)->getLastModified();
+    return filemtime($this->filename) <> strtotime(Config::$cache->file($this->filename)->getLastModified());
   }
 }
