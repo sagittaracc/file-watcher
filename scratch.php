@@ -5,6 +5,6 @@ require_once('vendor/autoload.php');
 use sagittaracc\core\File;
 
 (new File('scratch.php'))->onChange('timeUpdate', function(){
-  echo 'tracking';
+  echo 'start tracking...';
   $this->track();
 });
