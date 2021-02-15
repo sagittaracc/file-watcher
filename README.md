@@ -1,36 +1,43 @@
 # file-watcher
 
-1. Install via composer
+- Install via composer
 ```
 "require": {
   "sagittaracc/file-watcher": "@dev"
 }
 ```
 
-2. Create a database named sagittaracc_db_cache
+- Create a database named sagittaracc_db_cache
 
-3. Run migration
+- Run migration
 ```
 ./vendor/bin/phinx migrate -c ./vendor/sagittaracc/db-file-cache/phinx.php
 ```
 
-4. Copy the example
+- Copy the example
 ```
 cp vendor/sagittaracc/file-watcher/scratch.php ./scratch.php
 ```
 
-5. Try it out by running
+- Try it out by running
 ```
 php scratch.php
 ```
 
-6. Run it again
+- Run it again
 
-7. Edit the file scratch.php
+- Edit the file scratch.php in the third line
 
-8. Run again
+- Run again and make sure the file is considered to be changed
 ```
 php scratch.php
 ```
 
-9. Check the database
+- Edit the file scratch.php in another line
+
+- Run again and make sure the file is considered not to be changed
+```
+php scratch.php
+```
+
+- Check the database
