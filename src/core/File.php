@@ -12,10 +12,11 @@ class File {
 
   public function onChange($event, $callback) {
     try {
-      $eventTrigger = "{$event}Trigger";
-      if (method_exists($this, $eventTrigger))
-        if ($this->$eventTrigger())
-          $callback->call($this);
+      if (!($event instanceof \Closure))
+        throw new \Exception("Event should be function!");
+
+      if ($event->call($this))
+        $callback->call($this);
     } catch (\Exception $e) {
       echo $e->getMessage();
     }
@@ -25,7 +26,7 @@ class File {
     Config::$cache->update($this->filename);
   }
 
-  private function timeUpdateTrigger() {
+  public function timeUpdateTrigger() {
     if (!$this->filename)
       throw new \Exception("File not found!");
 
