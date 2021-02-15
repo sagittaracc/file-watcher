@@ -8,7 +8,6 @@ use sagittaracc\core\File;
 
   // return if time update has changed
   return $this->timeUpdateTrigger();
-  return false;
 
 }, function(){
 
