@@ -22,6 +22,25 @@ class File {
     }
   }
 
+  public function readLine($index) {
+    if (!$this->filename)
+      throw new \Exception("File not found!");
+
+    $lines = [];
+    $handle = fopen($this->filename, "r");
+    $currentLine = 1;
+    if ($handle) {
+      while (($buffer = fgets($handle)) !== false) {
+        $lines[$currentLine] = $buffer;
+        if ($index === $currentLine) break;
+        $currentLine++;
+      }
+      fclose($handle);
+    }
+
+    return $lines[$index];
+  }
+
   public function track() {
     Config::$cache->update($this->filename);
   }
