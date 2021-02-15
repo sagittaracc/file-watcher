@@ -6,13 +6,18 @@ use sagittaracc\core\File;
 
 (new File('scratch.php'))->onChange(function(){
 
-  // return if time update has changed
-  return $this->timeUpdateTrigger();
+  // file hash has been changed
+  $newHash = md5($this->readLine(3));
+  $oldHash = $this->getHash();
+  if ($newHash === $oldHash)
+    return false;
 
-}, function(){
+  return $newHash;
+
+}, function($newHash){
 
   // this runs if event has been triggered
   echo 'Start tracking...';
-  $this->track();
+  $this->track($newHash);
 
 });

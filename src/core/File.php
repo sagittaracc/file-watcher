@@ -15,8 +15,14 @@ class File {
       if (!($event instanceof \Closure))
         throw new \Exception("Event should be function!");
 
-      if ($event->call($this))
-        $callback->call($this);
+      if (!$this->filename)
+        throw new \Exception("File not found!");
+
+      if (!Config::$cache)
+        throw new \Exception('Cache not defined! Please define this in config!');
+
+      if ($data = $event->call($this))
+        $callback->call($this, $data);
     } catch (\Exception $e) {
       echo $e->getMessage();
     }
@@ -41,17 +47,18 @@ class File {
     return $lines[$index];
   }
 
-  public function track() {
-    Config::$cache->update($this->filename);
+  public function getHash() {
+    if (!Config::$cache->exists($this->filename))
+      return null;
+
+    return Config::$cache->file($this->filename)->getHash();
+  }
+
+  public function track($hash = '') {
+    Config::$cache->update($this->filename, $hash);
   }
 
   public function timeUpdateTrigger() {
-    if (!$this->filename)
-      throw new \Exception("File not found!");
-
-    if (!Config::$cache)
-      throw new \Exception('Cache not defined! Please define this in config!');
-
     if (!Config::$cache->exists($this->filename))
       return true;
 
