@@ -3,7 +3,7 @@
 1. Install via composer
 ```
 "require": {
-  "sagittaracc/file-watcher": "~1.0"
+  "sagittaracc/file-watcher": "@dev"
 }
 ```
 
