@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3711f3a5e1fc32d0ca1cecde5817cfaf",
+    "content-hash": "19861e5fca29f8a346cae906ede0f607",
     "packages": [
         {
             "name": "cakephp/core",
@@ -541,23 +541,22 @@
         },
         {
             "name": "sagittaracc/db-file-cache",
-            "version": "dev-main",
+            "version": "1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sagittaracc/db-file-cache.git",
-                "reference": "899711153c6241821c4d1d29233d82ca37240070"
+                "reference": "d5bf8917f6de74d0257db47af84ecfe3d8ca0741"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sagittaracc/db-file-cache/zipball/899711153c6241821c4d1d29233d82ca37240070",
-                "reference": "899711153c6241821c4d1d29233d82ca37240070",
+                "url": "https://api.github.com/repos/sagittaracc/db-file-cache/zipball/d5bf8917f6de74d0257db47af84ecfe3d8ca0741",
+                "reference": "d5bf8917f6de74d0257db47af84ecfe3d8ca0741",
                 "shasum": ""
             },
             "require": {
                 "catfan/medoo": "^1.7",
                 "robmorgan/phinx": "^0.12.5"
             },
-            "default-branch": true,
             "type": "lib",
             "autoload": {
                 "classmap": [
@@ -574,9 +573,9 @@
             "description": "Db file cache",
             "support": {
                 "issues": "https://github.com/sagittaracc/db-file-cache/issues",
-                "source": "https://github.com/sagittaracc/db-file-cache/tree/main"
+                "source": "https://github.com/sagittaracc/db-file-cache/tree/1.0"
             },
-            "time": "2021-02-11T14:56:10+00:00"
+            "time": "2021-02-15T08:58:55+00:00"
         },
         {
             "name": "symfony/config",
@@ -1534,9 +1533,7 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "sagittaracc/db-file-cache": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
